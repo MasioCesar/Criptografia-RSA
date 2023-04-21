@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define ULL unsinged long long 
+#define ULL unsigned long long 
 
-bool checkPrimo(ull num) {
+bool checkPrimo(ULL num) {
   if (num < 2) {
     return false;
   } else if (num == 2) {
