@@ -1,14 +1,5 @@
-#include <dirent.h>
-#include <string.h>
-#include <math.h>
-#include <stdbool.h>
 #include <stdio.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "core/encriptar.c"
-#include "utils.h"
-
-#define ULL unsigned long long 
+#include "../utils.h"
 
 void chavePublica() {
   FILE *chave_publica;
@@ -46,33 +37,4 @@ void chavePublica() {
   fclose(chave_publica);
 }
 
-int main() {
-  int escolha=0;
 
-  printf("DIGITE UM DOS NÚMEROS:\n1 - Gerar chave pública\n2 - Encriptar\n3 - Desencriptar\n");
-  
-  scanf("%d", &escolha);
-
-  while(escolha != 1 && escolha !=2 && escolha !=3){
-        printf("Número inválido, tente novamente!\n");
-        scanf("%d", &escolha);
-  }
-
-  switch (escolha) {
-    default:
-      printf("Número inválido, tente novamente!\n");
-      scanf("%d", &escolha);
-      break;
-    case 1:
-      chavePublica();
-      break;
-    case 2:
-      encriptar();
-      break;
-    case 3:
-      desencriptar(); 
-      break;
-  }
-  
-  return 0;
-}
